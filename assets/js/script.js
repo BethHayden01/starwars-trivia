@@ -37,6 +37,7 @@ next_button.onclick = () => {
         questionCounter(question_number);
         clearInterval(counter);
         startCountdown(timeValue);
+        next_button.style.display = "none";
     } else {
         console.log("Questions completed");
     }
@@ -83,6 +84,7 @@ function optionSelected(answer) {
     for (let i = 0; i < allOptions; i++) {
         option_list.children[i].classList.add("disabled");
     }
+    next_button.style.display = "block";
 }
 
 function startCountdown(time) {
@@ -91,9 +93,16 @@ function startCountdown(time) {
     function countdown() {
         timer.textContent = time;
         time--;
+        if (time < 9) {
+            let addZero = timer.textContent;
+            timer.textContent = "0" + addZero;
+        }
+        if (time < 0) {
+            clearInterval(counter);
+            timer.textContent = "00";
+        }
     }
 }
-
 
 function questionCounter(index) {
     const footer_question_count = quiz_board.querySelector(".progress");
