@@ -4,6 +4,8 @@ const escape_btn = instructions_box.querySelector(".buttons .escape-btn");
 const continue_btn = document.querySelector(".buttons .restart-btn");
 const quiz_board = document.querySelector(".quiz-board");
 const timer = quiz_board.querySelector(".countdown .countdown-secs");
+const time_up = quiz_board.querySelector(".countdown .countdown-text");
+
 const option_list = document.querySelector(".option_list");
 
 start_btn.onclick = () => {
@@ -45,6 +47,7 @@ restart_game.onclick = () => {
     clearInterval(counter);
     startCountdown(timeValue);
     next_button.style.display = "none";
+    time_up.textContent = "Time left";
 }
 
 escape_game.onclick = () => {
@@ -60,7 +63,10 @@ next_button.onclick = () => {
         clearInterval(counter);
         startCountdown(timeValue);
         next_button.style.display = "none";
+        time_up.textContent = "Time left";
     } else {
+        clearInterval(counter);
+        startCountdown(timeValue);
         console.log("Questions completed");
         showResultsPage();
     }
@@ -140,6 +146,7 @@ function startCountdown(time) {
         if (time < 0) {
             clearInterval(counter);
             timer.textContent = "00";
+            time_up.textContent = "TIME UP!";
 
             let correctAnswer = questions[question_count].answer;
             let allOptions = option_list.children.length;
