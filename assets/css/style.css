@@ -12,7 +12,7 @@ body {
 .start-btn,
 .instructions-box,
 .quiz-board,
-.results-page {
+.results_page {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -23,7 +23,8 @@ body {
 }
 
 .instructions-box.activeInfo,
-.quiz-board.activeQuiz {
+.quiz-board.activeQuiz,
+.results_page.activeResult {
     z-index: 5;
     opacity: 1;
     pointer-events: auto;
@@ -280,7 +281,7 @@ footer #next-btn:hover {
     background: #0a4097;
 }
 
-.results-page {
+.results_page {
     background: #fff;
     width: 450px;
     padding: 25px 30px;
@@ -295,13 +296,13 @@ footer #next-btn:hover {
     transform: translate(-50%, -50%) scale(0.9);
 }
 
-.results-page .end-message {
+.results_page .end-message {
     font-size: 20px;
     font-weight: 600;
     border-bottom: 1px solid #333;
 }
 
-.results-page .score span {
+.results_page .score span {
     display: flex;
     margin: 10px 0;
     font-size: 17px;
@@ -313,12 +314,12 @@ footer #next-btn:hover {
     padding: 0 4px;
 }
 
-.results-page .buttons {
+.results_page .buttons {
     display: flex;
     margin: 20px 0;
 }
 
-.results-page .buttons button {
+.results_page .buttons button {
     margin: 0 10px;
     height: 40px;
     padding: 0 20px;

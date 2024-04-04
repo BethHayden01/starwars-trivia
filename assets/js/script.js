@@ -26,8 +26,30 @@ let question_count = 0;
 let question_number = 1;
 let counter;
 let timeValue = 15;
+let userScore = 0;
 
 const next_button = quiz_board.querySelector("#next-btn");
+const results_page = document.querySelector(".results_page");
+const restart_game = results_page.querySelector(".buttons .restart-btn");
+const escape_game = results_page.querySelector(".buttons .escape-btn");
+
+restart_game.onclick = () => {
+    results_page.classList.remove("activeResult");
+    quiz_board.classList.add("activeQuiz");
+    let question_count = 0;
+    let question_number = 1;
+    let timeValue = 15;
+    let userScore = 0;
+    showQuestion(question_count);
+    questionCounter(question_number);
+    clearInterval(counter);
+    startCountdown(timeValue);
+    next_button.style.display = "none";
+}
+
+escape_game.onclick = () => {
+    window.location.reload();
+}
 
 next_button.onclick = () => {
     if (question_count < questions.length - 1) {
@@ -40,6 +62,7 @@ next_button.onclick = () => {
         next_button.style.display = "none";
     } else {
         console.log("Questions completed");
+        showResultsPage();
     }
 }
 
@@ -66,8 +89,9 @@ function optionSelected(answer) {
     let correctAnswer = questions[question_count].answer;
     let correctOption = answer.querySelector("span");
     let allOptions = option_list.children.length;
-
     if (userAnswer.trim() == correctAnswer.trim()) {
+        userScore += 1;
+        console.log(userScore);
         answer.classList.add("correct");
         console.log("Correct Answer");
     } else {
@@ -85,6 +109,23 @@ function optionSelected(answer) {
         option_list.children[i].classList.add("disabled");
     }
     next_button.style.display = "block";
+}
+
+function showResultsPage() {
+    instructions_box.classList.remove("activeInfo");
+    quiz_board.classList.remove("activeQuiz");
+    results_page.classList.add("activeResult");
+    const scoreText = results_page.querySelector(".score");
+    if (userScore > 3) {
+        let userScoreTag = '<span>Congratulations! your final score was <p>' + userScore + '</p> out of <p>' + questions.length + '</p></span>';
+        scoreText.innerHTML = userScoreTag;
+    } else if (userScore > 1) {
+        let userScoreTag = '<span>Well done, your final score was <p>' + userScore + '</p> out of <p>' + questions.length + '</p></span>';
+        scoreText.innerHTML = userScoreTag;
+    } else {
+        let userScoreTag = '<span>Unfortunatley, your final score was <p>' + userScore + '</p> out of <p>' + questions.length + '</p></span>';
+        scoreText.innerHTML = userScoreTag;
+    }
 }
 
 function startCountdown(time) {
