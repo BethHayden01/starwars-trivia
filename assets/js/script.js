@@ -3,6 +3,7 @@ const instructions_box = document.querySelector(".instructions-box");
 const escape_btn = instructions_box.querySelector(".buttons .escape-btn");
 const continue_btn = document.querySelector(".buttons .restart-btn");
 const quiz_board = document.querySelector(".quiz-board");
+const option_list = document.querySelector(".option_list");
 
 start_btn.onclick = () => {
     instructions_box.classList.add("activeInfo");
@@ -37,7 +38,6 @@ next_button.onclick = () => {
 
 function showQuestion(index) {
     const question = document.querySelector(".quiz");
-    const option_list = document.querySelector(".option_list");
     let question_tag = '<span>' + questions[index].number + ". " + questions[index].question + '</span>';
     let option_tag = '';
     for (let i = 0; i < questions[index].options.length; i++) {
@@ -57,6 +57,7 @@ function optionSelected(answer) {
     let userAnswer = answer.textContent;
     let correctAnswer = questions[question_count].answer;
     let correctOption = answer.querySelector("span");
+    let allOptions = option_list.children.length;
 
     if (userAnswer.trim() == correctAnswer.trim()) {
         answer.classList.add("correct");
@@ -64,6 +65,16 @@ function optionSelected(answer) {
     } else {
         answer.classList.add("incorrect");
         console.log("Incorrect Answer");
+
+        for (let i = 0; i < allOptions; i++) {
+            if (option_list.children[i].textContent == correctAnswer) {
+                option_list.children[i].setAttribute("class", "option correct");
+            }
+        }
+    }
+
+    for (let i = 0; i < allOptions; i++) {
+        option_list.children[i].classList.add("disabled");
     }
 }
 
