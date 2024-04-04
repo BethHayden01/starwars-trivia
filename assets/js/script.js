@@ -60,6 +60,7 @@ function showQuestion(index) {
 }
 
 function optionSelected(answer) {
+    clearInterval(counter);
     let userAnswer = answer.textContent;
     let correctAnswer = questions[question_count].answer;
     let correctOption = answer.querySelector("span");
