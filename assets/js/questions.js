@@ -1,8 +1,7 @@
-let questions = [
-    {
+let questions = [{
         number: 1,
         question: "Who is Luke Skywalker's father?",
-        answer: "Darth vader",
+        answer: "Darth Vader",
         options: [
             "Obi-Wan Kenobi",
             "Darth Vader",
@@ -13,7 +12,7 @@ let questions = [
     {
         number: 2,
         question: "What is the name of Han Solo's ship?",
-        answer:"Millennium Falcon",
+        answer: "Millennium Falcon",
         options: [
             "Millennium Falcon",
             "Star Destroyer",
@@ -38,7 +37,7 @@ let questions = [
         answer: "Ahch-To",
         options: [
             "Jakku",
-            "Ahch-To", 
+            "Ahch-To",
             "Takodana",
             "Ahch-To"
         ]
@@ -82,8 +81,8 @@ let questions = [
         answer: "Tatooine",
         options: [
             "Kamino",
-            "Tatooine", 
-            "Bespin", 
+            "Tatooine",
+            "Bespin",
             "Alderaan"
         ]
     },
@@ -104,7 +103,7 @@ let questions = [
         answer: "Rey",
         options: [
             "Luke Skywalker",
-            "Ben solo", 
+            "Ben solo",
             "Rey",
             "Kylo Ren"
         ]
