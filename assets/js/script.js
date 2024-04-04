@@ -25,6 +25,7 @@ continue_btn.onclick = () => {
 let question_count = 0;
 let question_number = 1;
 let counter;
+let timeValue = 15;
 
 const next_button = quiz_board.querySelector("#next-btn");
 
@@ -34,6 +35,8 @@ next_button.onclick = () => {
         question_number++;
         showQuestion(question_count);
         questionCounter(question_number);
+        clearInterval(counter);
+        startCountdown(timeValue);
     } else {
         console.log("Questions completed");
     }
