@@ -3,6 +3,7 @@ const instructions_box = document.querySelector(".instructions-box");
 const escape_btn = instructions_box.querySelector(".buttons .escape-btn");
 const continue_btn = document.querySelector(".buttons .restart-btn");
 const quiz_board = document.querySelector(".quiz-board");
+const timer = quiz_board.querySelector(".countdown .countdown-secs");
 const option_list = document.querySelector(".option_list");
 
 start_btn.onclick = () => {
@@ -18,10 +19,12 @@ continue_btn.onclick = () => {
     quiz_board.classList.add("activeQuiz");
     showQuestion(0);
     questionCounter(1);
+    startCountdown(15);
 }
 
 let question_count = 0;
 let question_number = 1;
+let counter;
 
 const next_button = quiz_board.querySelector("#next-btn");
 
@@ -75,6 +78,15 @@ function optionSelected(answer) {
 
     for (let i = 0; i < allOptions; i++) {
         option_list.children[i].classList.add("disabled");
+    }
+}
+
+function startCountdown(time) {
+    counter = setInterval(countdown, 1000);
+
+    function countdown() {
+        timer.textContent = time;
+        time--;
     }
 }
 
