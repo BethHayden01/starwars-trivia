@@ -34,8 +34,8 @@ const restart_game = results_page.querySelector(".buttons .restart-btn");
 const escape_game = results_page.querySelector(".buttons .escape-btn");
 
 restart_game.onclick = () => {
-    results_page.classList.remove("activeResult");
     quiz_board.classList.add("activeQuiz");
+    results_page.classList.remove("activeResult");
     let question_count = 0;
     let question_number = 1;
     let timeValue = 15;
@@ -87,7 +87,6 @@ function optionSelected(answer) {
     clearInterval(counter);
     let userAnswer = answer.textContent;
     let correctAnswer = questions[question_count].answer;
-    let correctOption = answer.querySelector("span");
     let allOptions = option_list.children.length;
     if (userAnswer.trim() == correctAnswer.trim()) {
         userScore += 1;
@@ -141,6 +140,19 @@ function startCountdown(time) {
         if (time < 0) {
             clearInterval(counter);
             timer.textContent = "00";
+
+            let correctAnswer = questions[question_count].answer;
+            let allOptions = option_list.children.length;
+
+            for (let i = 0; i < allOptions; i++) {
+                if (option_list.children[i].textContent == correctAnswer) {
+                    option_list.children[i].setAttribute("class", "option correct");
+                }
+            }
+            for (let i = 0; i < allOptions; i++) {
+                option_list.children[i].classList.add("disabled");
+            }
+            next_button.style.display = "block";
         }
     }
 }
