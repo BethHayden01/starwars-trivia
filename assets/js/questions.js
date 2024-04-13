@@ -39,7 +39,7 @@ let questions = [{
             "Jakku",
             "Ahch-To",
             "Takodana",
-            "Ahch-To"
+            "Kamino"
         ]
     },
     {
@@ -93,7 +93,7 @@ let questions = [{
         options: [
             "Yoda",
             "Luke Skywalker",
-            "Rey",
+            "Rey Skywalker",
             "Ahsoka Tano"
         ]
     },
@@ -104,7 +104,7 @@ let questions = [{
         options: [
             "Luke Skywalker",
             "Ben solo",
-            "Rey",
+            "Rey Skywalker",
             "Kylo Ren"
         ]
     },
