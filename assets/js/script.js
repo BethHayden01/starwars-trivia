@@ -38,16 +38,16 @@ const escape_game = results_page.querySelector(".buttons .escape-btn");
 restart_game.onclick = () => {
     quiz_board.classList.add("activeQuiz");
     results_page.classList.remove("activeResult");
-    let question_count = 0;
-    let question_number = 1;
-    let timeValue = 15;
+    question_count = 0;
+    question_number = 1;
     let userScore = 0;
+    let timeValue = 15;
     showQuestion(question_count);
     questionCounter(question_number);
     clearInterval(counter);
     startCountdown(timeValue);
-    next_button.style.display = "none";
     time_up.textContent = "Time left";
+    next_button.style.display = "none";
 }
 
 escape_game.onclick = () => {
