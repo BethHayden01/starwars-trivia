@@ -6,7 +6,7 @@
 }
 
 body {
-    background: #4d0000;
+    background: #9c2e1f;
 }
 
 .start-btn,
@@ -34,18 +34,18 @@ body {
 .start-btn button {
     font-size: 25px;
     font-weight: 500;
-    color: #000000;
+    color: #1c2020;
     padding: 15px 30px;
     outline: none;
     border: none;
     border-radius: 10px;
-    background: #fff;
+    background: #d8dfe1;
     cursor: pointer;
 }
 
 .instructions-box {
     width: 540px;
-    background: #fff;
+    background: #d8dfe1;
     border-radius: 10px;
     opacity: 0;
     pointer-events: none;
@@ -74,7 +74,7 @@ body {
 
 .instructions-box .rules-list .rule span {
     font-weight: 600;
-    color: #001e4d;
+    color: #2a338d;
 }
 
 .instructions-box .buttons {
@@ -93,7 +93,7 @@ body {
     outline: none;
     border: 1px solid transparent;
     border-radius: 10px;
-    color: #fff;
+    color: #d8dfe1;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
@@ -101,27 +101,27 @@ body {
 }
 
 .buttons button.escape-btn {
-    color: #0e9ebb;
+    color: #528db1;
 }
 
 .buttons button.restart-btn {
-    color: #fff;
-    border-color: #0e9ebb;
-    background-color: #0e9ebb;
+    color: #d8dfe1;
+    border-color: #528db1;
+    background-color: #528db1;
 }
 
 .buttons button.restart-btn:hover {
-    background: #076173;
+    background: #2a338d;
 }
 
 .buttons button.escape-btn:hover {
-    color: #fff;
-    background: #0e9ebb;
+    color: #d8dfe1;
+    background: #528db1;
 }
 
 .quiz-board {
     width: 550px;
-    background: #fff;
+    background: #d8dfe1;
     border-radius: 10px;
     opacity: 0;
     pointer-events: none;
@@ -133,7 +133,7 @@ body {
     z-index: 99;
     height: 70px;
     padding: 0 30px;
-    background: #fff;
+    background: #d8dfe1;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -152,7 +152,7 @@ body {
     justify-content: space-between;
     width: 145px;
     height: 45px;
-    background: #0e9ebb;
+    background: #528db1;
     border: 1px solid #c5d4e4;
     border-radius: 10px;
     padding: 0 8px;
@@ -162,26 +162,26 @@ body {
     font-weight: 400;
     font-size: 17px;
     user-select: none;
-    color: #fff;
+    color: #d8dfe1;
 }
 
 .quiz-board header .countdown .countdown-secs {
     font-size: 18px;
     font-weight: 500;
-    background: #c6c7c9;
+    background: #d8dfe1;
     height: 30px;
     width: 45px;
-    color: #0e9ebb;
+    color: #528db1;
     text-align: center;
     line-height: 30px;
     border-radius: 10px;
-    border: 1px solid #c5d4e4;
+    border: 1px solid #d8dfe1;
     user-select: none;
 }
 
 .quiz-board section {
     padding: 25px 30px 20px 30px;
-    background: #fff;
+    background: #d8dfe1;
 }
 
 .quiz-board section .quiz {
@@ -195,7 +195,7 @@ body {
 }
 
 section .option_list .option {
-    background: #fff;
+    background: #d8dfe1;
     border: 1px solid #222;
     border-radius: 4px;
     padding: 8px 15px;
@@ -209,9 +209,9 @@ section .option_list .option {
 }
 
 section .option_list .option:hover {
-    color: #001e4d;
+    color: #2a338d;
     background: #c6c7c9;
-    border-color: #001e4d;
+    border-color: #2a338d;
 }
 
 .option_list .option:last-child {
@@ -220,14 +220,14 @@ section .option_list .option:hover {
 
 .option_list .option.correct {
     color: #054024;
-    background: #62ab88;
-    border-color: #62ab88;
+    background: #417d6c;
+    border-color: #417d6c;
 }
 
 .option_list .option.incorrect {
     color: #5c0909;
-    background: #ab6262;
-    border-color: #ab6262;
+    background: #ab5246;
+    border-color: #ab5246;
 }
 
 .option_list .option.disabled {
@@ -265,20 +265,20 @@ footer #next-btn {
     font-weight: 500;
     border: none;
     outline: none;
-    color: #fff;
-    background-color: #0e9ebb;
+    color: #d8dfe1;
+    background-color: #528db1;
     border-radius: 10px;
-    border: 1px solid #0e9ebb;
+    border: 1px solid #528db1;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 footer #next-btn:hover {
-    background: #0a7085;
+    background: #2a338d;
 }
 
 .results_page {
-    background: #fff;
+    background: #d8dfe1;
     width: 450px;
     padding: 25px 30px;
     border-radius: 10px;
