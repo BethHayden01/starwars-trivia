@@ -100,7 +100,7 @@ let questions = [{
     {
         number: 10,
         question: "Who is Emperor Palpatine's granddaughter?",
-        answer: "Rey",
+        answer: "Rey Skywalker",
         options: [
             "Luke Skywalker",
             "Ben solo",
