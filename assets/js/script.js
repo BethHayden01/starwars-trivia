@@ -1,22 +1,22 @@
-const start_btn = document.querySelector(".start-btn button");
+const start_button = document.querySelector(".start-button button");
 const instructions_box = document.querySelector(".instructions-box");
-const escape_btn = instructions_box.querySelector(".buttons .escape-btn");
-const continue_btn = document.querySelector(".buttons .restart-btn");
+const escape_button = instructions_box.querySelector(".btns .escape-btn");
+const continue_button = document.querySelector(".btns .again-btn");
 const quiz_board = document.querySelector(".quiz-board");
 const timer = quiz_board.querySelector(".countdown .countdown-secs");
 const time_up = quiz_board.querySelector(".countdown .countdown-text");
 
-const option_list = document.querySelector(".option_list");
+const options = document.querySelector(".options");
 
-start_btn.onclick = () => {
+start_button.onclick = () => {
     instructions_box.classList.add("activeInfo");
 }
 
-escape_btn.onclick = () => {
+escape_button.onclick = () => {
     instructions_box.classList.remove("activeInfo");
 }
 
-continue_btn.onclick = () => {
+continue_button.onclick = () => {
     instructions_box.classList.remove("activeInfo");
     quiz_board.classList.add("activeQuiz");
     showQuestion(0);
@@ -24,28 +24,28 @@ continue_btn.onclick = () => {
     startCountdown(15);
 }
 
-let question_count = 0;
+let question_counter = 0;
 let question_number = 1;
 let counter;
-let timeValue = 15;
+let timerNumber = 15;
 let userScore = 0;
 
-const next_button = quiz_board.querySelector("#next-btn");
-const results_page = document.querySelector(".results_page");
-const restart_game = results_page.querySelector(".buttons .restart-btn");
-const escape_game = results_page.querySelector(".buttons .escape-btn");
+const next_button = quiz_board.querySelector("#next-button");
+const results_page = document.querySelector(".end_page");
+const restart_game = results_page.querySelector(".btns .again-btn");
+const escape_game = results_page.querySelector(".btns .escape-btn");
 
 restart_game.onclick = () => {
     quiz_board.classList.add("activeQuiz");
     results_page.classList.remove("activeResult");
-    question_count = 0;
+    question_counter = 0;
     question_number = 1;
     let userScore = 0;
-    let timeValue = 15;
-    showQuestion(question_count);
+    let timerNumber = 15;
+    showQuestion(question_counter);
     questionCounter(question_number);
     clearInterval(counter);
-    startCountdown(timeValue);
+    startCountdown(timerNumber);
     time_up.textContent = "Time left";
     next_button.style.display = "none";
 }
@@ -55,18 +55,18 @@ escape_game.onclick = () => {
 }
 
 next_button.onclick = () => {
-    if (question_count < questions.length - 1) {
-        question_count++;
+    if (question_counter < questions.length - 1) {
+        question_counter++;
         question_number++;
-        showQuestion(question_count);
+        showQuestion(question_counter);
         questionCounter(question_number);
         clearInterval(counter);
-        startCountdown(timeValue);
+        startCountdown(timerNumber);
         next_button.style.display = "none";
         time_up.textContent = "Time left";
     } else {
         clearInterval(counter);
-        startCountdown(timeValue);
+        startCountdown(timerNumber);
         console.log("Questions completed");
         showResultsPage();
     }
@@ -80,8 +80,8 @@ function showQuestion(index) {
         option_tag += '<div class="option">' + questions[index].options[i] + '<span></span></div>';
     }
     question.innerHTML = question_tag;
-    option_list.innerHTML = option_tag; // Append the options to the option_list element
-    const option = option_list.querySelectorAll(".option");
+    options.innerHTML = option_tag;
+    const option = options.querySelectorAll(".option");
     for (let i = 0; i < option.length; i++) {
         option[i].addEventListener("click", function () {
             optionSelected(this);
@@ -92,8 +92,8 @@ function showQuestion(index) {
 function optionSelected(answer) {
     clearInterval(counter);
     let userAnswer = answer.textContent;
-    let correctAnswer = questions[question_count].answer;
-    let allOptions = option_list.children.length;
+    let correctAnswer = questions[question_counter].answer;
+    let allOptions = options.children.length;
     if (userAnswer.trim() == correctAnswer.trim()) {
         userScore += 1;
         console.log(userScore);
@@ -104,14 +104,14 @@ function optionSelected(answer) {
         console.log("Incorrect Answer");
 
         for (let i = 0; i < allOptions; i++) {
-            if (option_list.children[i].textContent == correctAnswer) {
-                option_list.children[i].setAttribute("class", "option correct");
+            if (options.children[i].textContent == correctAnswer) {
+                options.children[i].setAttribute("class", "option correct");
             }
         }
     }
 
     for (let i = 0; i < allOptions; i++) {
-        option_list.children[i].classList.add("disabled");
+        options.children[i].classList.add("disabled");
     }
     next_button.style.display = "block";
 }
@@ -148,16 +148,16 @@ function startCountdown(time) {
             timer.textContent = "00";
             time_up.textContent = "TIME UP!";
 
-            let correctAnswer = questions[question_count].answer;
-            let allOptions = option_list.children.length;
+            let correctAnswer = questions[question_counter].answer;
+            let allOptions = options.children.length;
 
             for (let i = 0; i < allOptions; i++) {
-                if (option_list.children[i].textContent == correctAnswer) {
-                    option_list.children[i].setAttribute("class", "option correct");
+                if (options.children[i].textContent == correctAnswer) {
+                    options.children[i].setAttribute("class", "option correct");
                 }
             }
             for (let i = 0; i < allOptions; i++) {
-                option_list.children[i].classList.add("disabled");
+                options.children[i].classList.add("disabled");
             }
             next_button.style.display = "block";
         }
