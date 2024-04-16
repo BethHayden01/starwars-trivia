@@ -74,13 +74,13 @@ next_button.onclick = () => {
 
 function showQuestion(index) {
     const question = document.querySelector(".quiz");
-    let question_tag = '<span>' + questions[index].number + ". " + questions[index].question + '</span>';
-    let option_tag = '';
+    let question_label = '<span>' + questions[index].number + ". " + questions[index].question + '</span>';
+    let option_label = '';
     for (let i = 0; i < questions[index].options.length; i++) {
-        option_tag += '<div class="option">' + questions[index].options[i] + '<span></span></div>';
+        option_label += '<div class="option">' + questions[index].options[i] + '<span></span></div>';
     }
-    question.innerHTML = question_tag;
-    options.innerHTML = option_tag;
+    question.innerHTML = question_label;
+    options.innerHTML = option_label;
     const option = options.querySelectorAll(".option");
     for (let i = 0; i < option.length; i++) {
         option[i].addEventListener("click", function () {
@@ -93,7 +93,7 @@ function optionSelected(answer) {
     clearInterval(counter);
     let userAnswer = answer.textContent;
     let correctAnswer = questions[question_counter].answer;
-    let allOptions = options.children.length;
+    let everyOption = options.children.length;
     if (userAnswer.trim() == correctAnswer.trim()) {
         userScore += 1;
         console.log(userScore);
@@ -103,14 +103,14 @@ function optionSelected(answer) {
         answer.classList.add("incorrect");
         console.log("Incorrect Answer");
 
-        for (let i = 0; i < allOptions; i++) {
+        for (let i = 0; i < everyOption; i++) {
             if (options.children[i].textContent == correctAnswer) {
                 options.children[i].setAttribute("class", "option correct");
             }
         }
     }
 
-    for (let i = 0; i < allOptions; i++) {
+    for (let i = 0; i < everyOption; i++) {
         options.children[i].classList.add("disabled");
     }
     next_button.style.display = "block";
@@ -140,8 +140,8 @@ function startCountdown(time) {
         timer.textContent = time;
         time--;
         if (time < 9) {
-            let addZero = timer.textContent;
-            timer.textContent = "0" + addZero;
+            let addTimerZero = timer.textContent;
+            timer.textContent = "0" + addTimerZero;
         }
         if (time < 0) {
             clearInterval(counter);
@@ -149,14 +149,14 @@ function startCountdown(time) {
             time_up.textContent = "TIME UP!";
 
             let correctAnswer = questions[question_counter].answer;
-            let allOptions = options.children.length;
+            let everyOption = options.children.length;
 
-            for (let i = 0; i < allOptions; i++) {
+            for (let i = 0; i < everyOption; i++) {
                 if (options.children[i].textContent == correctAnswer) {
                     options.children[i].setAttribute("class", "option correct");
                 }
             }
-            for (let i = 0; i < allOptions; i++) {
+            for (let i = 0; i < everyOption; i++) {
                 options.children[i].classList.add("disabled");
             }
             next_button.style.display = "block";
