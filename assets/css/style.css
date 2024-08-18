@@ -6,7 +6,7 @@
 }
 
 body {
-    background: #9c2e1f;
+    background: #59abccc9;
 }
 
 .start-button,
@@ -58,8 +58,9 @@ body {
     border-bottom: 1px solid #333;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 0 35px;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 600;
 }
 
@@ -69,7 +70,7 @@ body {
 
 .instructions-box .rules-list .rule {
     margin: 5px 0;
-    font-size: 17px;
+    font-size: 18px;
 }
 
 .instructions-box .rules-list .rule span {
@@ -100,6 +101,15 @@ body {
     transition: all 0.3s ease;
 }
 
+.good-luck {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 100;
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
 .btns button.escape-btn {
     color: #528db1;
 }
@@ -120,7 +130,7 @@ body {
 }
 
 .quiz-board {
-    width: 550px;
+    width: 900px;
     background: #d8dfe1;
     border-radius: 10px;
     opacity: 0;
@@ -142,7 +152,7 @@ body {
 }
 
 .quiz-board header .header {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 600;
 }
 
@@ -150,8 +160,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 145px;
-    height: 45px;
+    width: 175px;
+    height: 55px;
     background: #528db1;
     border: 1px solid #c5d4e4;
     border-radius: 10px;
@@ -160,7 +170,7 @@ body {
 
 .quiz-board header .countdown .countdown-text {
     font-weight: 400;
-    font-size: 17px;
+    font-size: 20px;
     user-select: none;
     color: #d8dfe1;
 }
@@ -170,7 +180,7 @@ body {
     font-weight: 500;
     background: #d8dfe1;
     height: 30px;
-    width: 45px;
+    width: 60px;
     color: #528db1;
     text-align: center;
     line-height: 30px;
@@ -220,14 +230,15 @@ section .options .option:hover {
 
 .options .option.correct {
     color: #054024;
-    background: #417d6c;
-    border-color: #417d6c;
+    background: #599685c6;
+    border-color: #599685c6;
+    ;
 }
 
 .options .option.incorrect {
     color: #5c0909;
-    background: #ab5246;
-    border-color: #ab5246;
+    background: #b6655aba;
+    border-color: #b6655aba;
 }
 
 .options .option.disabled {

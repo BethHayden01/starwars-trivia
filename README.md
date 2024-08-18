@@ -119,8 +119,3 @@ For the future development of this project I intend to add the following element
 - [Iuliia-konovalova](https://github.com/IuliiaKonovalova) was my mentor and a supporter of my project throughout the initial project submission and resubmission. 
 - [Code-Institute](https://codeinstitute.net/) for it's helpful tutorials on JavaScript, HTML and CSS elements of this project. 
 - [Eddy-Ku](https://github.com/PalliateAi) for his support and insight into CSS, HTML and JavaScript. 
-
-
-
-
-

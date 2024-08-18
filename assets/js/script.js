@@ -146,7 +146,7 @@ function startCountdown(time) {
         if (time < 0) {
             clearInterval(counter);
             timer.textContent = "00";
-            time_up.textContent = "TIME UP!";
+            time_up.textContent = "TIMES UP!";
 
             let correctAnswer = questions[question_counter].answer;
             let everyOption = options.children.length;
